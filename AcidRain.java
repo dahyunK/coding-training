@@ -17,10 +17,15 @@ public class AcidRain implements ActionListener, KeyListener{
 	JLabel info;
 	JLabel[] wordlabel;
 	int level =1 ,correct = 0, life = 3, speed;
-	String[] word = {"apple", "blue", "crown", "deep","eco","fast","grid","house","icon","jacket","king","hesitate",
-			"deter", "book", "crisis", "leopard","python", "whistle", "algorithm", "police", "array","rope",
-			"intelligent", "architect", "person", "computer", "science", "engineer", "plant","machine"
-			};
+	String[] word = {"printf","scanf","fprintf","fscanf","sprintf","sscanf",
+			"fgetc","fgets","fputc","fputs","getc","getchar","gets","putc","putchar"
+			,"puts","ungetc","fread","fwrite", "fclose", "fflush", "fopen", "freopen", "setbuf", "setvbuf"
+			, "fgetpos", "fseek", "fsetpos", "ftell", "rewind", "clearerr", "feof", "ferror", "perror", "remove"
+			, "rename", "tempfile", "tempnam", "memchr", "strchr", "strcspn", "strpbrk", "strrchr", "strspn", "strstr", "strtok"
+			, "memcpy", "memmove", "strcpy", "strncpy", "memcmp", "memcmp", "strcmp", "strcoll", "strncmp", "strxfrm", "strcat", "strncat"
+			, "memset", "strerror", "strlen", "atof", "atoi", "atol", "strtod", "strtol", "strtoul", "rand", "srand", "malloc", "free"
+			, "calloc", "realloc", "abort", "atexit", "exit", "getenv", "system", "bsearch", "qsort", "abs", "div", "labs", "ldiv", "mblen"
+			, "mbtowc", "wctomb", "mbstowcs", "wcstombs", "clock", "difftime", "mktime", "time", "asctime", "ctime", "gmtime", "localtime", "strftime"};
 	Random random;
 	int i = 0;
 	
