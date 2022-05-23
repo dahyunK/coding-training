@@ -17,7 +17,11 @@ public class AcidRainJava implements ActionListener, KeyListener{
 	JLabel info;
 	JLabel[] wordlabel;
 	int level =1 ,correct = 0, life = 3, speed;
-	String[] word = {"yayayaya"};
+	String[] word = {"String", "Scanner", "nextLine", "next", "nextInt", "nextDouble" , "if-else", "Switch", "while"
+			, "do-while", "for", "break", "continue", "for-each", "Arrays.sort", "this", "super.print", "SetLocation"
+			, "SetBounds", "SetSize", "SetIconImage", "SetTitle", "SetResizalbe", "Jpanel", "JLabel", "JTextField"
+			, "JFormattedTextField", "JpasswordField", "JcomboBox", "JSpinner", "JButton", "JCheckBox", "JRadionButton"
+			, "FlowLayout", "GridBagLayout", "GridLayout", "BorderLayout", "BoxLayout", "CardLayout", "SetLayout"};
 	Random random;
 	int i = 0;
 	
