@@ -17,7 +17,13 @@ public class AcidRainPython implements ActionListener, KeyListener{
 	JLabel info;
 	JLabel[] wordlabel;
 	int level =1 ,correct = 0, life = 3, speed;
-	String[] word = {"babababa"};
+	String[] word = {"abs", "all", "any", "ascii", "repr", "bin", "oct", "hex", "bool"
+			, "breakpoint", "bytes", "bytearray", "callable", "chr", "ord", "classmethod"
+			, "staticmethod", "compile", "int", "float", "complex", "setattr", "getattr", "delattr"
+			, "hasattr", "dict", "dir", "divmod", "enumerate", "eval", "exec", "filter", "map", "format"
+			, "set", "frozenset", "globals", "locals", "hash", "help", "id", "input", "isinstance", "issubclass"
+			, "iter", "next", "len", "list", "max", "min", "memoryview", "object", "open", "pow", "print", "property"
+			, "range", "reversed", "round", "slice", "sorted", "str", "sum", "super", "tuple", "type", "vars", "zip"};
 	Random random;
 	int i = 0;
 	
