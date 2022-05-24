@@ -1,19 +1,26 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
+import java.util.Random;
 
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.swing.*;
-
-import java.util.Random;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class AcidRain implements ActionListener, KeyListener{
+	ImageIcon icon;
 	JFrame frame;
 	JPanel board;
 	JTextField field;
@@ -44,10 +51,20 @@ public class AcidRain implements ActionListener, KeyListener{
 		frame = new JFrame("AcidRain");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		board = new JPanel();  
+		
+		icon = new ImageIcon("background.png");
+		board = new JPanel() {
+			public void paintComponent(Graphics g) {
+				
+				g.drawImage(icon.getImage(),0,0, null);
+				
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		
 		board.setBounds(0, 0, 800, 630);
 		board.setPreferredSize(new Dimension(800,700));
-		board.setBackground(Color.GREEN);
 		board.setForeground(Color.GREEN);
 		board.setLayout(null);
 		
