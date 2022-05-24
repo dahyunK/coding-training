@@ -1,6 +1,7 @@
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -14,6 +15,7 @@ import javax.swing.*;
 import java.util.Random;
 
 public class AcidRainJava implements ActionListener, KeyListener{
+	ImageIcon icon;
 	JFrame frame;
 	JPanel board;
 	JTextField field;
@@ -40,10 +42,19 @@ public class AcidRainJava implements ActionListener, KeyListener{
 		frame = new JFrame("AcidRainJava");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		board = new JPanel();  
+		icon = new ImageIcon("background2.png");
+		board = new JPanel() {
+			public void paintComponent(Graphics g) {
+				
+				g.drawImage(icon.getImage(),0,0, null);
+				
+				setOpaque(false);
+				super.paintComponent(g);
+			}
+		};
+		
 		board.setBounds(0, 0, 800, 630);
 		board.setPreferredSize(new Dimension(800,700));
-		board.setBackground(Color.GREEN);
 		board.setForeground(Color.GREEN);
 		board.setLayout(null);
 		
@@ -58,7 +69,7 @@ public class AcidRainJava implements ActionListener, KeyListener{
 		info = new JLabel("레벨: " + level +"                                            점수: " + correct + "점                                               목숨 : " + life +"개");
 		info.setBounds(0, 630, 800, 40);
 		info.setOpaque(true);
-		info.setBackground(Color.yellow);
+		info.setBackground(Color.GREEN);
 		Font font = info.getFont();
 		info.setFont(new Font(font.getName(),Font.BOLD,20));
 		
