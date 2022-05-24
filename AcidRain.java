@@ -5,6 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 
 import java.util.Random;
@@ -227,6 +231,29 @@ public class AcidRain implements ActionListener, KeyListener{
 			}			
 		}		
 	}
+	
+	class PlayWav implements Runnable {
+		@Override
+		public void run() {
+			File Wav = new File("sample.wav");
+			PlaySound(Wav);
+			PlaySound(Wav);
+			PlaySound(Wav);
+			PlaySound(Wav);
+		}
+			static void PlaySound(File Sound) {
+				try {
+					Clip clip = AudioSystem.getClip();
+					clip.open(AudioSystem.getAudioInputStream(Sound));
+					clip.start();
+					
+					Thread.sleep(clip.getMicrosecondLength()/1000);
+					
+				}catch(Exception e) {
+					
+				}
+		 }
+	}		
 }
 
  
