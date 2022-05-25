@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
+import java.net.URL;
 import java.util.Random;
 
 import javax.sound.sampled.AudioSystem;
@@ -52,7 +53,10 @@ public class AcidRain implements ActionListener, KeyListener{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		
-		icon = new ImageIcon("background.png");
+		URL imageURL = AcidRain.class.getClassLoader().getResource("background.png");
+		ImageIcon icon = new ImageIcon(imageURL);
+		System.out.println(imageURL);
+		
 		board = new JPanel() {
 			public void paintComponent(Graphics g) {
 				

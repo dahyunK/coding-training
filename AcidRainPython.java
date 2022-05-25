@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
+import java.net.URL;
 
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -44,7 +45,10 @@ public class AcidRainPython implements ActionListener, KeyListener{
 		frame = new JFrame("AcidRainPython");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		icon = new ImageIcon("background3.png");
+		URL imageURL = AcidRainPython.class.getClassLoader().getResource("background3.png");
+		ImageIcon icon = new ImageIcon(imageURL);
+		System.out.println(imageURL);
+		
 		board = new JPanel() {
 			public void paintComponent(Graphics g) {
 				
