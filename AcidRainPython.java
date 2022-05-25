@@ -8,19 +8,14 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.File;
 import java.net.URL;
-import java.util.Random;
 
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
+import javax.swing.*;
 
-public class AcidRain implements ActionListener, KeyListener{
+import java.util.Random;
+
+public class AcidRainPython implements ActionListener, KeyListener{
 	ImageIcon icon;
 	JFrame frame;
 	JPanel board;
@@ -29,19 +24,17 @@ public class AcidRain implements ActionListener, KeyListener{
 	JLabel info;
 	JLabel[] wordlabel;
 	int level =1 ,correct = 0, life = 3, speed;
-	String[] word = {"printf","scanf","fprintf","fscanf","sprintf","sscanf",
-			"fgetc","fgets","fputc","fputs","getc","getchar","gets","putc","putchar"
-			,"puts","ungetc","fread","fwrite", "fclose", "fflush", "fopen", "freopen", "setbuf", "setvbuf"
-			, "fgetpos", "fseek", "fsetpos", "ftell", "rewind", "clearerr", "feof", "ferror", "perror", "remove"
-			, "rename", "tempfile", "tempnam", "memchr", "strchr", "strcspn", "strpbrk", "strrchr", "strspn", "strstr", "strtok"
-			, "memcpy", "memmove", "strcpy", "strncpy", "memcmp", "memcmp", "strcmp", "strcoll", "strncmp", "strxfrm", "strcat", "strncat"
-			, "memset", "strerror", "strlen", "atof", "atoi", "atol", "strtod", "strtol", "strtoul", "rand", "srand", "malloc", "free"
-			, "calloc", "realloc", "abort", "atexit", "exit", "getenv", "system", "bsearch", "qsort", "abs", "div", "labs", "ldiv", "mblen"
-			, "mbtowc", "wctomb", "mbstowcs", "wcstombs", "clock", "difftime", "mktime", "time", "asctime", "ctime", "gmtime", "localtime", "strftime"};
+	String[] word = {"abs", "all", "any", "ascii", "repr", "bin", "oct", "hex", "bool"
+			, "breakpoint", "bytes", "bytearray", "callable", "chr", "ord", "classmethod"
+			, "staticmethod", "compile", "int", "float", "complex", "setattr", "getattr", "delattr"
+			, "hasattr", "dict", "dir", "divmod", "enumerate", "eval", "exec", "filter", "map", "format"
+			, "set", "frozenset", "globals", "locals", "hash", "help", "id", "input", "isinstance", "issubclass"
+			, "iter", "next", "len", "list", "max", "min", "memoryview", "object", "open", "pow", "print", "property"
+			, "range", "reversed", "round", "slice", "sorted", "str", "sum", "super", "tuple", "type", "vars", "zip"};
 	Random random;
 	int i = 0;
 	
-	public AcidRain() {
+	public AcidRainPython() {
 		wordlabel = new JLabel[50];
 		
 		for(int i = 0; i < 50; i++) {
@@ -49,11 +42,10 @@ public class AcidRain implements ActionListener, KeyListener{
 		}
 		random = new Random();
 		
-		frame = new JFrame("AcidRain");
+		frame = new JFrame("AcidRainPython");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		
-		URL imageURL = AcidRain.class.getClassLoader().getResource("background.png");
+		URL imageURL = AcidRainPython.class.getClassLoader().getResource("background3.png");
 		ImageIcon icon = new ImageIcon(imageURL);
 		System.out.println(imageURL);
 		
@@ -83,7 +75,7 @@ public class AcidRain implements ActionListener, KeyListener{
 		info = new JLabel("레벨: " + level +"                                            점수: " + correct + "점                                               목숨 : " + life +"개");
 		info.setBounds(0, 630, 800, 40);
 		info.setOpaque(true);
-		info.setBackground(Color.yellow);
+		info.setBackground(Color.orange);
 		Font font = info.getFont();
 		info.setFont(new Font(font.getName(),Font.BOLD,20));
 		
@@ -256,7 +248,7 @@ public class AcidRain implements ActionListener, KeyListener{
 	class PlayWav implements Runnable {
 		@Override
 		public void run() {
-			File Wav = new File("sample.wav");
+			File Wav = new File("sample3.wav");
 			PlaySound(Wav);
 			PlaySound(Wav);
 			PlaySound(Wav);
@@ -274,7 +266,5 @@ public class AcidRain implements ActionListener, KeyListener{
 					
 				}
 		 }
-	}		
+	}
 }
-
- 
